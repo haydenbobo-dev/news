@@ -12,8 +12,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [nextPage, setNextPage] = useState(null);
 
-  const API_KEY = "pub_b563adac40c34c9fba59bc06093361ab
-";
+  const API_KEY = "pub_b563adac40c34c9fba59bc06093361ab";
 
   const fetchNews = async (isLoadMore = false) => {
     if (!isLoadMore) setLoading(true);
