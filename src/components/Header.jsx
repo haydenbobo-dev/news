@@ -51,9 +51,9 @@ const Header = ({ category, setCategory, language, setLanguage, searchQuery, set
         </div>
 
         <select value={language} onChange={(e) => setLanguage(e.target.value)} style={{ padding: '5px', borderRadius: '8px' }}>
-          <option value="en">EN</option>
-          <option value="hi">HI</option>
-          <option value="ta">TA</option>
+          <option value="en">ENGLISH</option>
+          <option value="hi">HINDI</option>
+          <option value="ta">TAMIL</option>
         </select>
         <button onClick={onRefresh} style={{ background: '#007bff', color: '#fff', border: 'none', borderRadius: '50%', width: '35px', height: '35px', cursor: 'pointer' }}>🔄</button>
       </div>
