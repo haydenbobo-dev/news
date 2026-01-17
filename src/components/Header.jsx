@@ -37,23 +37,52 @@ const Header = ({ category, setCategory, language, setLanguage, searchQuery, set
                    gap: '10px',
                    alignItems: 'center',
                    width: '100%',
-                   justifyContent: 'flex-end' }}>
-        <div style={{ position: 'relative', flexGrow: 1, maxWidth: '300px' }}>
-          <form onSubmit={onSearchSubmit} style={{ display: 'flex', background: '#f1f3f4', borderRadius: '20px', padding: '5px 15px' }}>
+                   justifyContent: 'flex-end'
+                  }}>
+        <div style={{ position: 'relative',
+                     flexGrow: 1,
+                     maxWidth: '300px'
+                    }}>
+          <form onSubmit={onSearchSubmit} style={{ display: 'flex',
+                                                  background: '#f1f3f4',
+                                                  borderRadius: '20px',
+                                                  padding: '5px 15px' 
+                                                 }}>
             <input 
               type="text" placeholder="Search..." value={searchQuery}
               onFocus={() => setShowSuggestions(true)}
               onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
               onChange={(e) => setSearchQuery(e.target.value)}
-              style={{ border: 'none', background: 'transparent', outline: 'none', width: '100%' }}
+              style={{ border: 'none',
+                      background: 'transparent',
+                      outline: 'none',
+                      width: '100%'
+                     }}
             />
-            <button type="submit" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>🔍</button>
+            <button type="submit"
+              style={{ border: 'none',
+                      background: 'transparent',
+                      cursor: 'pointer'
+                     }}>🔍</button>
           </form>
 
           {showSuggestions && suggestions.length > 0 && (
-            <div style={{ position: 'absolute', top: '40px', left: 0, right: 0, background: '#fff', borderRadius: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', zIndex: 100 }}>
+            <div style={{ position: 'absolute',
+                         top: '40px',
+                         left: 0,
+                         right: 0,
+                         background: '#fff',
+                         borderRadius: '8px',
+                         boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+                         zIndex: 100
+                        }}>
               {suggestions.map((s, i) => (
-                <div key={i} onClick={() => { setSearchQuery(s.title); onSearchSubmit(); }} style={{ padding: '10px', fontSize: '13px', cursor: 'pointer', borderBottom: '1px solid #eee' }}>
+                <div key={i} onClick={() => { setSearchQuery(s.title); onSearchSubmit(); }} style={{ padding: '10px',
+                                                                                                    fontSize: '13px',
+                                                                                                    cursor: 'pointer',
+                                                                                                    borderBottom: '1px
+                                                                                                      solid #eee'
+                                                                                                     }}>
                   {s.title.substring(0, 45)}...
                 </div>
               ))}
@@ -61,12 +90,21 @@ const Header = ({ category, setCategory, language, setLanguage, searchQuery, set
           )}
         </div>
 
-        <select value={language} onChange={(e) => setLanguage(e.target.value)} style={{ padding: '5px', borderRadius: '8px' }}>
+        <select value={language} onChange={(e) => setLanguage(e.target.value)} style={{ padding: '5px',
+                                                                                        borderRadius: '8px'
+                                                                                      }}>
           <option value="en">ENGLISH</option>
           <option value="hi">HINDI</option>
           <option value="ta">TAMIL</option>
         </select>
-        <button onClick={onRefresh} style={{ background: '#007bff', color: '#fff', border: 'none', borderRadius: '50%', width: '35px', height: '35px', cursor: 'pointer' }}>🔄</button>
+        <button onClick={onRefresh} style={{ background: '#007bff',
+                                            color: '#fff',
+                                            border: 'none',
+                                            borderRadius: '50%',
+                                            width: '35px',
+                                            height: '35px',
+                                            cursor: 'pointer'
+                                           }}>🔄</button>
       </div>
     </header>
   );
