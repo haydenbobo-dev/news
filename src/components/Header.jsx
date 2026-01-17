@@ -8,7 +8,10 @@ const Header = ({ category, setCategory, language, setLanguage, searchQuery, set
 
   return (
     <header className="header-container">
-      <div style={{ fontSize: '26px', fontWeight: '800', color: '#007bff' }}>VibeRead</div>
+      <div style={{ fontSize: '26px',
+                   fontWeight: '800', 
+                   color: '#007bff' 
+                  }}>VibeRead</div>
       
       <nav className="nav-scroll">
         {categories.map(cat => (
@@ -16,9 +19,13 @@ const Header = ({ category, setCategory, language, setLanguage, searchQuery, set
             key={cat} 
             onClick={() => { setSearchQuery(''); setCategory(cat); }}
             style={{
-              background: 'none', border: 'none', cursor: 'pointer', fontWeight: '600',
+              background: 'none', 
+              border: 'none', 
+              cursor: 'pointer',
+              fontWeight: '600',
               color: category === cat && !searchQuery ? '#007bff' : '#555',
-              textTransform: 'capitalize', whiteSpace: 'nowrap'
+              textTransform: 'capitalize',
+              whiteSpace: 'nowrap'
             }}
           >
             {cat}
@@ -26,7 +33,11 @@ const Header = ({ category, setCategory, language, setLanguage, searchQuery, set
         ))}
       </nav>
 
-      <div style={{ display: 'flex', gap: '10px', alignItems: 'center', width: '100%', justifyContent: 'flex-end' }}>
+      <div style={{ display: 'flex',
+                   gap: '10px',
+                   alignItems: 'center',
+                   width: '100%',
+                   justifyContent: 'flex-end' }}>
         <div style={{ position: 'relative', flexGrow: 1, maxWidth: '300px' }}>
           <form onSubmit={onSearchSubmit} style={{ display: 'flex', background: '#f1f3f4', borderRadius: '20px', padding: '5px 15px' }}>
             <input 
