@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 const NewsBody = ({ news = [], loading, error }) => {
   const [activeMenu, setActiveMenu] = useState(null);
 
-  if (loading && news.length === 0) return <div style={{ textAlign: 'center', padding: '100px' }}>Loading...</div>;
-  if (error) return <div style={{ textAlign: 'center', padding: '100px', color: 'red' }}>{error}</div>;
+  if (loading && news.length === 0) return <div style={{ textAlign: 'center',
+                                                        padding: '100px'
+                                                       }}>Loading...</div>;
+  if (error) return <div style={{ textAlign: 'center',
+                                 padding: '100px',
+                                 color: 'red' 
+                                }}>{error}</div>;
 
   const share = {
     copy: (u) => { navigator.clipboard.writeText(u); alert("Link Copied!"); },
