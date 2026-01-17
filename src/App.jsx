@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
 import NewsBody from './components/NewsBody';
-import './App.css'; // Make sure this is imported!
+import './App.css'; 
 
 function App() {
   const [news, setNews] = useState([]);
@@ -43,8 +43,17 @@ function App() {
       />
       <NewsBody news={news} loading={loading} />
       {nextPage && (
-        <div style={{ textAlign: 'center', padding: '40px' }}>
-          <button onClick={() => fetchNews(true)} style={{ padding: '12px 40px', borderRadius: '30px', border: 'none', background: '#007bff', color: '#fff', fontWeight: 'bold', cursor: 'pointer' }}>
+        <div style={{ textAlign: 'center',
+                     padding: '40px' }}>
+          <button onClick={() => fetchNews(true)}
+            style={{ padding: '12px 40px', 
+                     borderRadius: '30px',
+                     border: 'none', 
+                     background: '#007bff',
+                     color: '#fff',
+                     fontWeight: 'bold', 
+                     cursor: 'pointer' 
+                   }}>
             Load More News
           </button>
         </div>
